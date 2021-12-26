@@ -5,9 +5,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Series</title>
+    <script src="/JS/main.js"></script>
+
+    <style>
+        #listaRegistros{
+            display: none;
+        }
+
+        #cadastroRegistro{
+            display: none;
+        }
+
+        body[page=lista] #listaRegistros{
+                display: block;
+        }
+
+        body[page=cadastro] #cadastroRegistro{
+            display: block;
+        }
+
+        body
+        {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse:collapse;
+        }
+
+        table th,
+        table td
+        {
+            font-size: 14px;
+            padding: 10px 15px;
+            border: solid 1px #ccc;
+        }
+
+        button
+        {
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color:#07a;
+            color: #fff;
+            margin: 3px;
+            padding: 10px 15px;
+        }
+
+        button.cinza
+        {
+            background-color:#ccc;
+            color: #666;
+        }
+
+        button:hover
+        {
+            opacity: 0.8    ;
+        }
+    </style>
 </head>
-<body>
-    
+<body page='lista'>
+    <div id="listaRegistros">
+        <table> 
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome da Serie</th>
+                    <th>Temporada</th>
+                    <th>Status</th>
+                    <th>Streaming/TV</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <div>
+            <button onclick="visualizar('cadastro')">Adicionar</button>
+        </div>
+
+    </div>
+
+    <div id="cadastroRegistro">
+        <div class="label">
+            <div>ID</div>
+            <div>
+                <input type="number">
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Nome da Serie</div>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Temporada</div>
+            <div>
+                <input type="number">
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Streaming/TV</div>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+
+        <div>
+            <button>Salvar</button>
+            <button onclick="visualizar('lista')" class="cinza">Cancelar</button>
+        </div>
+
+    </div>
+
 </body>
 </html>
 
