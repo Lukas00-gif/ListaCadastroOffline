@@ -14,6 +14,8 @@
 
         #cadastroRegistro{
             display: none;
+            flex-direction: column;
+            gap: 25px;
         }
 
         body[page=lista] #listaRegistros{
@@ -21,7 +23,7 @@
         }
 
         body[page=cadastro] #cadastroRegistro{
-            display: block;
+            display: flex;
         }
 
         body
@@ -64,6 +66,23 @@
         {
             opacity: 0.8    ;
         }
+
+        input
+        {
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .label > div
+        {
+            display: flex;
+        }
+
+        .label > div
+        {
+            flex: 1;
+        }
     </style>
 </head>
 <body page='lista'>
@@ -79,9 +98,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
-
-            </tbody>
+            <tbody id="listaRegistroBody"></tbody>
         </table>
 
         <div>
@@ -90,41 +107,48 @@
 
     </div>
 
-    <div id="cadastroRegistro">
+    <form id="cadastroRegistro">
         <div class="label">
             <div>ID</div>
             <div>
-                <input type="number">
+                <input type="number" id="id" readonly>
             </div>
         </div>
 
         <div class="label">
             <div>Nome da Serie</div>
             <div>
-                <input type="text">
+                <input type="text" id="nomeSerie">
             </div>
         </div>
 
         <div class="label">
             <div>Temporada</div>
             <div>
-                <input type="number">
+                <input type="number" id="temp">
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Status</div>
+            <div>
+                <input type="text" id="status">
             </div>
         </div>
 
         <div class="label">
             <div>Streaming/TV</div>
             <div>
-                <input type="text">
+                <input type="text" id="stream">
             </div>
         </div>
 
         <div>
             <button>Salvar</button>
-            <button onclick="visualizar('lista')" class="cinza">Cancelar</button>
+            <button onclick="visualizar('lista')" class="cinza" type="button">Cancelar</button>
         </div>
 
-    </div>
+    </form>
 
 </body>
 </html>
